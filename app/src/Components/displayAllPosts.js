@@ -5,18 +5,24 @@ import { Posts } from "../Components/Posts"
 
 const AllPosts = props => {
 
-  let posts = []
 
+  //Function to render n number of posts
   const renderPosts = () => {
-    for (let i = 0; i < this.props.numberOfPosts; i++) {
-      posts.push(<Posts className='post' index={i} />)
+    let posts = []
+
+    for (let i = 0; i < props.numberOfPosts; i++) {
+      posts.push(<Posts index={i} />)
     }
-    return posts;
+
+    return (
+      <div>
+        {posts}
+      </div>
+
+
+    )
 
   }
-
-
-
 
   return (
     <div className='all-posts-containter'>

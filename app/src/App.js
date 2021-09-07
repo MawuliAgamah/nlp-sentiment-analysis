@@ -7,8 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      <AllPosts numberOfPosts={4} />
-
+      <div className='main-section-container'>
+        <AllPosts numberOfPosts={30} />
+      </div>
     </div>
   );
 }

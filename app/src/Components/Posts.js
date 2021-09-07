@@ -13,7 +13,7 @@ export const Posts = props => {
   console.log(props)
 
   return (
-    <div className="discussion-container"> {[data].map(data => (
+    <div className="post-container"> {[data].map(data => (
       [
         <ul>
           <li>

@@ -2,26 +2,45 @@
   text-align: center;
 }
 
-.discussion-container {
+/* Main screen section */
+
+.main-section-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.post-container {
+  display: inline-block;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
 
-  height: 100px;
-  width: 800px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-bottom: 3em;
+  height: 80%;
+  width: 90%;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   border: 1px solid;
   border-radius: 10px;
 }
 
 .all-posts-containter {
-  padding-top: 20px;
-  padding-left: 20px;
-  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  border: 3px solid;
+
   border-radius: 10px;
-  width: 1000px;
 }
