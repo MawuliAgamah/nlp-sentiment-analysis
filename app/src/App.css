@@ -19,21 +19,37 @@
   vertical-align: middle;
 
   height: 80%;
-  width: 90%;
+  width: 99%;
 
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
 
-  border: 1px solid;
-  border-radius: 10px;
+  /* border: 1px solid; */
+  /* border-radius: 10px;  */
+  border-bottom: 1px solid grey;
+  background-color: #c8d8e4;
+}
+
+/* Remove bullet points from list element */
+.post-container li {
+  list-style: none;
+  text-align: left;
+}
+
+.post-title {
+  font-weight: bold;
 }
 
 .all-posts-containter {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: #ffffff;
+
+  height: 800px;
 
   margin-top: 20px;
   margin-bottom: 20px;
@@ -43,4 +59,6 @@
   border: 3px solid;
 
   border-radius: 10px;
+
+  overflow-y: scroll;
 }

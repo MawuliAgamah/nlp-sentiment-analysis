@@ -1,6 +1,7 @@
 import React from 'react';
 import "../App.css"
 import { Posts } from "../Components/Posts"
+import { Search } from '../Components/SubredditSearch';
 
 
 const AllPosts = props => {
@@ -15,6 +16,7 @@ const AllPosts = props => {
     }
 
     return (
+
       <div>
         {posts}
       </div>
@@ -24,11 +26,12 @@ const AllPosts = props => {
 
   }
 
-  return (
-    <div className='all-posts-containter'>
+  return ([
+
+    <div id='allPosts' className='all-posts-containter'>
       {renderPosts()}
     </div>
-  )
+  ])
 }
 
 export default AllPosts

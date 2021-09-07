@@ -19,7 +19,7 @@ export const Posts = props => {
           <li>
             {'r/ ' + data.subreddit[props.index]}
           </li>
-          <li>
+          <li class='post-title'>
             {data.title[props.index]}
           </li>
           <li>
