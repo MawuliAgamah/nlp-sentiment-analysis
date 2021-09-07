@@ -3,14 +3,24 @@ import "../App.css"
 import { Posts } from "../Components/Posts"
 
 
-const AllPosts = () => {
+const AllPosts = props => {
+
+  let posts = []
+
+  const renderPosts = () => {
+    for (let i = 0; i < this.props.numberOfPosts; i++) {
+      posts.push(<Posts className='post' index={i} />)
+    }
+    return posts;
+
+  }
+
+
+
 
   return (
     <div className='all-posts-containter'>
-      <Posts index={1} />
-      <Posts index={2} />
-      <Posts index={3} />
-      <Posts index={4} />
+      {renderPosts()}
     </div>
   )
 }

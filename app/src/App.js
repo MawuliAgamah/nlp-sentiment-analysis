@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <AllPosts />
+      <AllPosts numberOfPosts={4} />
 
     </div>
   );
