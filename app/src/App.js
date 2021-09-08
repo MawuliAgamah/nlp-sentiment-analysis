@@ -1,15 +1,17 @@
 
 import './App.css';
-import AllPosts from "./Components/displayAllPosts"
-import { Search } from './Components/SubredditSearch';
+import { MainScreen } from './Components/MainScreen'
+
+
 
 function App() {
 
   return (
     <div className="App">
-      <div className='main-section-container'>
-        <Search />
-        <AllPosts numberOfPosts={100} />
+      <div className='center'>
+        <div className='main-screen-container'>
+          <MainScreen />
+        </div>
       </div>
     </div>
   );

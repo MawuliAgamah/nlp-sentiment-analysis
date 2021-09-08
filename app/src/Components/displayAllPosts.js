@@ -1,7 +1,6 @@
 import React from 'react';
 import "../App.css"
-import { Posts } from "../Components/Posts"
-import { Search } from '../Components/SubredditSearch';
+import { Posts } from "./Posts"
 
 
 const AllPosts = props => {
