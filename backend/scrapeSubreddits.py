@@ -22,8 +22,10 @@ def subreddit_cleaner_to_json(subreddits):
       'url':x['data']['url']
       },ignore_index=True)
 
-  df = df_subreddits.to_json()
-  return(df)
+  df = df_subreddits.to_json(orient="table")
+  parsed = json.loads(df)
+  
+  return(parsed)
 
 
 

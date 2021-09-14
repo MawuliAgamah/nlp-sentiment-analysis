@@ -2,8 +2,8 @@
 from flask import Flask
 from flask_restful import Api, Resource 
 import requests 
-import pandas as pd 
 import json
+import pandas as pd
 import scrapeSubreddits
 
 
@@ -13,14 +13,12 @@ import scrapeSubreddits
 app = Flask(__name__)
 api = Api(app)
 
-
-class redditDb(Resource):
+class getRedditPosts(Resource):
+  
   def get(self):
-
     limit = 100
     timeframe = 'day' 
     listing = 'top' 
-    
     r_cryptoCurrency = scrapeSubreddits.get_reddit('CryptoCurrency',listing,limit,timeframe)
     r_cryptoMarkets = scrapeSubreddits.get_reddit('CryptoMarkets',listing,limit,timeframe)
     r_ethtrader = scrapeSubreddits.get_reddit('Ethtrader',listing,limit,timeframe)
@@ -32,7 +30,7 @@ class redditDb(Resource):
 
 
 
-api.add_resource(redditDb,"/redditdb")
+api.add_resource(getRedditPosts,"/getReddit")
 
 if __name__ == "__main__":
   app.run(debug=True)
