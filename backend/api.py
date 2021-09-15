@@ -11,6 +11,7 @@ import scrapeSubreddits
 
 
 app = Flask(__name__)
+
 api = Api(app)
 
 class getRedditPosts(Resource):
@@ -28,9 +29,17 @@ class getRedditPosts(Resource):
     data = scrapeSubreddits.subreddit_cleaner_to_json(subreddits_df)
     return data
 
+class receiveSearchReqeust(Resource):
+
+  def post(self):
+
+
 
 
 api.add_resource(getRedditPosts,"/getReddit")
+api.add_resource(receiveSearchReqeust,"/receivePosts")
+
+
 
 if __name__ == "__main__":
   app.run(debug=True)
