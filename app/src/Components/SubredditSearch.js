@@ -30,6 +30,8 @@ export const Search = () => {
       body: JSON.stringify(searchedItem)
     }).then(() => { console.log(searchedItem + 'Search sent to server') })
 
+
+
   };
 
 

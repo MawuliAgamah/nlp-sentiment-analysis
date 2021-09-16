@@ -19,6 +19,7 @@ export const Posts = props => {
     axios.get('/getReddit')
       .then(res => {
         setRedditPosts(res)
+        console.log(res)
       })
       .catch(err => {
         console.log(err)
@@ -43,8 +44,8 @@ export const Posts = props => {
     <div className="post-container"> {[redditPosts].map(data => (
       [
         <ul>
-          {<li key={data.data}>
-            {data[10]}
+          {<li key={data.data['index']}>
+            {data['content']}
           </li>}
           {/* <li class='post-title'>
             {data.title[props.index]}
