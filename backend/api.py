@@ -1,9 +1,12 @@
 
 from flask import Flask
+import flask
 from flask_restful import Api, Resource 
 import requests 
 import json
 import pandas as pd
+from requests.api import request
+#from requests.models import Request
 import scrapeSubreddits
 
 
@@ -29,15 +32,20 @@ class getRedditPosts(Resource):
     data = scrapeSubreddits.subreddit_cleaner_to_json(subreddits_df)
     return data
 
-class receiveSearchReqeust(Resource):
 
-  def post(self):
+#Take the searched term that the user searches
+@app.route('/subreddit_search',methods = ['POST'])
+def take_search():
+  data =  flask.request.get_json()
+  print(data)
+  return data
+
 
 
 
 
 api.add_resource(getRedditPosts,"/getReddit")
-api.add_resource(receiveSearchReqeust,"/receivePosts")
+
 
 
 

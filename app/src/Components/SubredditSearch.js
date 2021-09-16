@@ -19,10 +19,8 @@ export const Search = () => {
     e.preventDefault();
     const searchedItem = { searchTerm };
     //Get form data from the state
-    alert(searchTerm)
 
-
-    fetch('/https://postman-echo.com/post', {
+    fetch('/subreddit_search', {
 
       //specify the method 
       method: 'POST',
@@ -30,7 +28,7 @@ export const Search = () => {
       headers: { 'Content-Type': 'application/json' },
       //The data being sent with the reqe
       body: JSON.stringify(searchedItem)
-    }).then(() => { console.log('Search sent to server') })
+    }).then(() => { console.log(searchedItem + 'Search sent to server') })
 
   };
 
