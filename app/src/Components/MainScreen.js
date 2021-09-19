@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import AllPosts from "../Components/DisplayAllPosts"
+import axios from "axios";
 import { Search } from '../Components/SubredditSearch';
-
+import { Button } from '../Components/Button'
 
 export const MainScreen = () => {
 
 
+  const [globalSearchTerm, setGlobalSearchTerm] = useState('No Search')
+
+
   return (
     <>
-      <Search className='subreddit-search' />
-      <AllPosts numberOfPosts={100} />
+      <Search setGlobalSearchTerm={setGlobalSearchTerm} className='subreddit-search' />
+      <AllPosts globalSearchTerm={globalSearchTerm} numberOfPosts={100} />
     </>
   )
 

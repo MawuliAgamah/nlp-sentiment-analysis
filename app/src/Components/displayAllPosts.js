@@ -5,14 +5,21 @@ import { Posts } from "./Posts"
 
 const AllPosts = props => {
 
+  const newSearch = props.globalSearchTerm
+
+
 
   //Function to render n number of posts
   const renderPosts = () => {
     let posts = []
 
     for (let i = 0; i < props.numberOfPosts; i++) {
-      posts.push(<Posts index={i} />)
+
+      posts.push(<Posts theSearchedTerm={newSearch} index={i} />)
     }
+
+
+
 
     return (
 

@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import "../App.css"
 
 
-export const Search = () => {
+export const Search = (props) => {
 
   //Create search term state variable
   const [searchTerm, setSearchTerm] = useState("")
+
+
 
 
   const handleChange = (e) => {
@@ -16,12 +18,17 @@ export const Search = () => {
 
   const onSubmit = (e) => {
 
+
+
+
     e.preventDefault();
+
     const searchedItem = { searchTerm };
+
+    props.setGlobalSearchTerm(searchTerm)
+
     //Get form data from the state
-
     fetch('/subreddit_search', {
-
       //specify the method 
       method: 'POST',
       //Declare the type of data being sent
@@ -29,23 +36,25 @@ export const Search = () => {
       //The data being sent with the reqe
       body: JSON.stringify(searchedItem)
     }).then(() => { console.log(searchedItem + 'Search sent to server') })
-
-
-
   };
+
 
 
   return (
     <form>
-      <input type="search"
+      <input
+        type="search"
         name="searchTerm"
         placeholder="Search subreddits "
         value={searchTerm}
-        onChange={handleChange} >
+        onChange={handleChange}
+      >
       </input>
-      <button type="submit" onClick={onSubmit}> search </button>
+      <button
+        type="submit"
+        onClick={onSubmit}> search
+      </button>
     </form>
-
   )
 
 

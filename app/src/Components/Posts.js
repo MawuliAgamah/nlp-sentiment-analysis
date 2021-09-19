@@ -6,35 +6,24 @@ import axios from 'axios'
 
 
 
-
-
 export const Posts = props => {
 
   const [redditPosts, setRedditPosts] = useState([]);
 
-
   //Make an api call to the flask backend
 
-  useEffect(() => {
-    axios.get('/getReddit')
-      .then(res => {
-        setRedditPosts(res)
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
+  console.log("Post.js: " + props.theSearchedTerm)
+
 
   // useEffect(() => {
-  //   fetch('/getReddit')
+  //   axios.get('/getReddit')
   //     .then(res => {
-  //       return res.json();
+  //       setRedditPosts(res)
+  //       console.log(res)
   //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setRedditPosts(data)
-  //     });
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
   // }, [])
 
 
@@ -44,8 +33,7 @@ export const Posts = props => {
     <div className="post-container"> {[redditPosts].map(data => (
       [
         <ul>
-          {<li key={data.data['index']}>
-            {data['content']}
+          {<li >
           </li>}
           {/* <li class='post-title'>
             {data.title[props.index]}
