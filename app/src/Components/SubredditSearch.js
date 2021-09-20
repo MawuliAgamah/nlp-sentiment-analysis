@@ -9,23 +9,25 @@ export const Search = (props) => {
   const [searchTerm, setSearchTerm] = useState("")
 
 
-
-
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
     console.log(e.target.value)
   };
 
+
+  const handleClick = (event) => {
+    props.onClick(event.target.value)
+  };
+
+
+
+  // props.setGlobalSearchTerm({ globalSearchTerm: true })
+
+
   const onSubmit = (e) => {
 
-
-
-
     e.preventDefault();
-
     const searchedItem = { searchTerm };
-
-    props.setGlobalSearchTerm(searchTerm)
 
     //Get form data from the state
     fetch('/subreddit_search', {
@@ -37,6 +39,7 @@ export const Search = (props) => {
       body: JSON.stringify(searchedItem)
     }).then(() => { console.log(searchedItem + 'Search sent to server') })
   };
+
 
 
 
@@ -52,7 +55,7 @@ export const Search = (props) => {
       </input>
       <button
         type="submit"
-        onClick={onSubmit}> search
+        onClick={onSubmit} onChange={handleClick}  > search
       </button>
     </form>
   )

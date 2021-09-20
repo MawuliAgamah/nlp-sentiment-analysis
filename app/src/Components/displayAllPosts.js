@@ -5,7 +5,7 @@ import { Posts } from "./Posts"
 
 const AllPosts = props => {
 
-  const newSearch = props.globalSearchTerm
+
 
 
 
@@ -15,7 +15,7 @@ const AllPosts = props => {
 
     for (let i = 0; i < props.numberOfPosts; i++) {
 
-      posts.push(<Posts theSearchedTerm={newSearch} index={i} />)
+      posts.push(<Posts theSearchedTerm={props.globalSearchTerm} index={i} />)
     }
 
 
