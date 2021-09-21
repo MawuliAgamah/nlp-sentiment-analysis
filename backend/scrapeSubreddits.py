@@ -15,11 +15,10 @@ def subreddit_cleaner_to_json(subreddits):
 
   df_subreddits = pd.DataFrame()
 
-  for i in subreddits:
-   for x in i['data']['children']:
-      df_subreddits = df_subreddits.append({'subreddit':x['data']['subreddit'],
-      'title':x['data']['title'],'content':x['data']['selftext'],
-      'url':x['data']['url']
+  for i in subreddits['data']['children']:
+      df_subreddits = df_subreddits.append({'subreddit':i['data']['subreddit'],
+      'title':i['data']['title'],'content':i['data']['selftext'],
+      'url':i['data']['url']
       },ignore_index=True)
 
   df = df_subreddits.to_json(orient="table")

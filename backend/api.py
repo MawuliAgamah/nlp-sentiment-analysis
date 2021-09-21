@@ -28,8 +28,6 @@ def take_search():
   return jsonify(data)
 
 
-
-
 @app.route('/getReddit',methods = ['GET'])
 def get():
   search = session.get('userSearch',None)
@@ -38,40 +36,9 @@ def get():
   timeframe = 'day' 
   listing = 'top' 
   r_cryptoCurrency = scrapeSubreddits.get_reddit(search['searchTerm'],listing,limit,timeframe)
-  #r_cryptoCurrency = scrapeSubreddits.get_reddit('CryptoMarkets',listing,limit,timeframe)
-  #r_cryptoMarkets = scrapeSubreddits.get_reddit('CryptoMarkets',listing,limit,timeframe)
-  #r_ethtrader = scrapeSubreddits.get_reddit('Ethtrader',listing,limit,timeframe)
-  #r_bitmarkets = scrapeSubreddits.get_reddit('bitcoinmarkets',listing,limit,timeframe)
-   # subreddits_df = [r_cryptoCurrency,r_cryptoMarkets,r_ethtrader,r_bitmarkets] 
-  subreddits_df = [r_cryptoCurrency] 
+  subreddits_df = r_cryptoCurrency
   data = scrapeSubreddits.subreddit_cleaner_to_json(subreddits_df)
   return data
-
-
-  
-# class getRedditPosts(Resource):
-  
-#   def get(self):
-#     limit = 100
-#     timeframe = 'day' 
-#     listing = 'top' 
-#     user_search = flask.session['userSearch'] 
-#     r_cryptoCurrency = scrapeSubreddits.get_reddit('CryptoCurrency',listing,limit,timeframe)
-#     r_cryptoMarkets = scrapeSubreddits.get_reddit('CryptoMarkets',listing,limit,timeframe)
-#     r_ethtrader = scrapeSubreddits.get_reddit('Ethtrader',listing,limit,timeframe)
-#     r_bitmarkets = scrapeSubreddits.get_reddit('bitcoinmarkets',listing,limit,timeframe)
-#     subreddits_df = [r_cryptoCurrency,r_cryptoMarkets,r_ethtrader,r_bitmarkets] 
-
-#     data = scrapeSubreddits.subreddit_cleaner_to_json(subreddits_df)
-#     return data
-
-
-
-
-
-
-
-# api.add_resource(getRedditPosts,"/getReddit")
 
 
 if __name__ == '__main__':

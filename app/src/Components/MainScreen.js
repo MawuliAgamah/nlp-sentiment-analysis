@@ -1,27 +1,42 @@
 import React, { useState } from "react";
 import AllPosts from "../Components/DisplayAllPosts"
-import axios from "axios";
 import { Search } from '../Components/SubredditSearch';
-import { Button } from '../Components/Button'
+import axios from "axios";
+
 
 export const MainScreen = () => {
 
 
-  const [globalSearchTerm, setGlobalSearchTerm] = useState(false)
 
-  const [value, setValue] = useState('');
+  const [isFetching, setisFetching] = useState(false)
+  const [redditPosts, setRedditPosts] = useState([]);
 
-  const onClick = (data) => {
 
-    setValue(data)
-    console.log('hi')
+  function onTap() {
 
+    setisFetching(true)
+    axios.get('/getReddit')
+      .then(res => {
+        setRedditPosts(res.data.data)
+        console.log(res.data.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   };
+
+
 
   return (
     <>
-      <Search data={value} onClick={(e) => { onClick(e) }} setGlobalSearchTerm={setGlobalSearchTerm} className='subreddit-search' />
-      <AllPosts globalSearchTerm={globalSearchTerm} numberOfPosts={100} />
+      < Search
+        callBack={onTap}
+        className='subreddit-search'
+      />
+
+      {/* {isFetching === true ? <AllPosts requestData={redditPosts} numberOfPosts={10} /> : <AllPosts />} */}
+      {<AllPosts requestData={redditPosts} numberOfPosts={100} />}
+
     </>
   )
 

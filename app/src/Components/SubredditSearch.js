@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import "../App.css"
 
@@ -15,18 +14,11 @@ export const Search = (props) => {
   };
 
 
-  const handleClick = (event) => {
-    props.onClick(event.target.value)
-  };
-
-
-
   // props.setGlobalSearchTerm({ globalSearchTerm: true })
 
-
   const onSubmit = (e) => {
-
     e.preventDefault();
+    props.callBack()
     const searchedItem = { searchTerm };
 
     //Get form data from the state
@@ -55,7 +47,11 @@ export const Search = (props) => {
       </input>
       <button
         type="submit"
-        onClick={onSubmit} onChange={handleClick}  > search
+        //onClick={onSubmit} 
+        onClick={onSubmit}
+      //onClick={() => props.callBack}
+      //onChange={props.onTap}
+      > search
       </button>
     </form>
   )

@@ -1,7 +1,7 @@
 
 import './App.css';
 import { MainScreen } from './Components/MainScreen'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
 function App() {

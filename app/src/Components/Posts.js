@@ -1,43 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../App.css"
-import axios from 'axios'
-// import data from "./data/cryptojsondata2.json";
-// import data from "../data/allsubredditsdata.json";
+
+
 export const Posts = props => {
 
-  const [redditPosts, setRedditPosts] = useState([]);
-
-  // Make an api call to the flask backend
-  useEffect(() => {
-    if (props.theSearchedTerm['globalSearchTerm'] === true) {
-
-      console.log("Post.js: " + props.theSearchedTerm['globalSearchTerm'])
-      axios.get('/getReddit')
-        .then(res => {
-          setRedditPosts(res)
-          console.log(res)
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
-  }, [])
 
   return (
-    <div className="post-container"> {[redditPosts].map(data => (
-      [
-        <ul>
-          {<li >
-          </li>}
-          {/* <li class='post-title'>
-            {data.title[props.index]}
-          </li>
-          <li>
-            {'See content'}
-          </li> */}
-        </ul>
-      ]))
-    }
+
+    <div className="post-container">
+      {
+        props.dataFromMain.length > 0 ?
+          [props.dataFromMain].map(data => (
+            <ul>
+              <li class='post-title' key={data[props.index].index}>
+                {data[props.index].title}
+              </li>
+              <li class='post-content' key={data[props.index].index}>
+                {data[props.index].content}
+              </li>
+            </ul>
+          )) : null
+      }
     </div >
-  );
+
+  )
 };
