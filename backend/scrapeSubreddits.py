@@ -6,6 +6,7 @@ import json
 def get_reddit(subreddit,listing,limit,timeframe):
     try:
         base_url = f'https://www.reddit.com/r/{subreddit}/{listing}.json?limit={limit}&t={timeframe}'
+        # base_url = f'https://www.reddit.com/search/?q={subreddit}'
         request = requests.get(base_url, headers = {'User-agent': 'yourbot'})
     except:
         print('An Error Occured')

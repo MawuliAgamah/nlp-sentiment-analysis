@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
 }
 
 /* Center the main panel  */
@@ -31,6 +36,9 @@
   /* background-color: #aab8c2; */
 
   border-radius: 10px;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .all-posts-containter {
@@ -69,11 +77,12 @@
   align-items: center;
   vertical-align: middle;
 
-  height: 150px;
+  height: 200px;
   width: 1100px;
 
-  margin-bottom: 5px;
-
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
   /* border: 1px solid; */
   /* border-radius: 10px;  */
   border-top: 1px solid #e1e8ed;
@@ -81,6 +90,29 @@
   border-left: 1px solid #e1e8ed;
   border-right: 1px solid #e1e8ed;
   border-radius: 10px;
+  overflow: auto;
+}
+
+.sidebar-container {
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  border-radius: 10px;
+
+  margin-left: 50px;
+  margin-right: 20px;
+
+  width: 300px;
+  height: 800px;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Remove bullet points from list element */
@@ -91,8 +123,16 @@
 
 .post-title {
   font-weight: bold;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .post-content {
-  font-size: small;
+  border-top: 3px solid #e1e8ed;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  padding-top: 10px;
 }

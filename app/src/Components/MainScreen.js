@@ -26,7 +26,6 @@ export const MainScreen = () => {
   };
 
 
-
   return (
     <>
       < Search
@@ -35,7 +34,7 @@ export const MainScreen = () => {
       />
 
       {/* {isFetching === true ? <AllPosts requestData={redditPosts} numberOfPosts={10} /> : <AllPosts />} */}
-      {<AllPosts requestData={redditPosts} numberOfPosts={100} />}
+      {<AllPosts requestData={redditPosts} numberOfPosts={redditPosts.length} />}
 
     </>
   )

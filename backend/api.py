@@ -29,12 +29,13 @@ def take_search():
 
 
 @app.route('/getReddit',methods = ['GET'])
+
 def get():
   search = session.get('userSearch',None)
   #search = json.dump(search)
   limit = 100
   timeframe = 'day' 
-  listing = 'top' 
+  listing = 'new' 
   r_cryptoCurrency = scrapeSubreddits.get_reddit(search['searchTerm'],listing,limit,timeframe)
   subreddits_df = r_cryptoCurrency
   data = scrapeSubreddits.subreddit_cleaner_to_json(subreddits_df)
