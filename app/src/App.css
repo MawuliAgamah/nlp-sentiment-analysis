@@ -22,7 +22,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 
-  height: 800px;
+  height: 900px;
 
   align-items: center;
   justify-content: center;
@@ -39,6 +39,8 @@
 
   grid-column-start: 2;
   grid-column-end: 3;
+
+  position: relative;
 }
 
 .all-posts-containter {
@@ -50,14 +52,16 @@
   grid-column-end: -1;
 
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 3;
 
   /* background-color: #aab8c2; */
 
-  height: 700px;
+  height: 650px;
 
   margin-right: 5px;
   margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 80px;
 
   overflow-y: scroll;
 }
@@ -80,7 +84,7 @@
   height: 200px;
   width: 1100px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-right: 10px;
   padding-right: 20px;
   /* border: 1px solid; */
@@ -108,11 +112,6 @@
 
   grid-column-start: 1;
   grid-column-end: 2;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 /* Remove bullet points from list element */
@@ -135,4 +134,24 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   padding-top: 10px;
+}
+
+.sliding-menu-container {
+  background-color: aquamarine;
+
+  position: absolute;
+  top: 82%;
+  left: 0%;
+
+  width: 90%;
+  height: 15%;
+
+  margin-right: 50px;
+  margin-left: 50px;
+
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  border-radius: 5px;
 }

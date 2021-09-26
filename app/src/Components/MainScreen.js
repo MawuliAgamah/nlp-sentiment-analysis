@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import AllPosts from "../Components/DisplayAllPosts"
-import { Search } from '../Components/SubredditSearch';
+import AllPosts from "./DisplayAllPosts"
+import { Search } from './SubredditSearch';
+import SlidingMenu from "./SlidingMenuContainer";
 import axios from "axios";
 
 
@@ -10,7 +11,6 @@ export const MainScreen = () => {
 
   const [isFetching, setisFetching] = useState(false)
   const [redditPosts, setRedditPosts] = useState([]);
-
 
   function onTap() {
 
@@ -32,9 +32,9 @@ export const MainScreen = () => {
         callBack={onTap}
         className='subreddit-search'
       />
-
       {/* {isFetching === true ? <AllPosts requestData={redditPosts} numberOfPosts={10} /> : <AllPosts />} */}
       {<AllPosts requestData={redditPosts} numberOfPosts={redditPosts.length} />}
+      <SlidingMenu />
 
     </>
   )

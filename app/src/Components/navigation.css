@@ -1,0 +1,22 @@
+.sidebar-container ul,
+.sidebar-container li {
+  list-style: none;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.navigation-reddit {
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  border-radius: 10px;
+
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+
+  margin-bottom: 100px;
+}

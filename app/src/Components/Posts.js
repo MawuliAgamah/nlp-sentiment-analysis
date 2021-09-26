@@ -4,10 +4,8 @@ import "../App.css"
 
 export const Posts = props => {
 
-
   console.log(props.dataFromMain.length)
   return (
-
     <div className="post-container">
       {
         props.dataFromMain.length > 0 ?
