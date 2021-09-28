@@ -3,18 +3,27 @@ import "./SlidingMenu.css";
 
 const Menu = props => {
 
-  var visibility = 'hide';
+  var visibility = 'default';
 
-  if (props.menuVisibility) {
+
+  if (props.menuVisibility && props.defaultMenu) {
     visibility = 'show'
+    console.log(visibility)
+  } else if ((!props.menuVisibility && !props.defaultMenu) || (!props.menuVisibility && props.defaultMenu)) {
+    visibility = 'hide'
+    console.log(visibility)
+  } else {
+    visibility = 'default'
+
   }
 
   return (
     <div id="flyoutMenu"
-      onMouseDown={props.handleMouseDown}
       className={visibility}>
-      <h2>Sentiments</h2>
-      <h2>Charts</h2>
+      <ul>
+        <li> Sentiments </li>
+        <li> Charts </li>
+      </ul>
     </div>
   )
 

@@ -1,18 +1,48 @@
 #flyoutMenu {
   width: 100%;
   height: 100%;
-  background-color: #ffe600;
-
-  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
-  overflow: scroll;
-  z-index: 1000;
+  background-color: #e7e6db;
 }
 
 #flyoutMenu.hide {
-  visibility: hidden;
+  animation-name: slideout;
+  overflow: hidden;
+  animation-duration: 2s;
 }
 
 #flyoutMenu.show {
-  transition: 0.5s;
+  animation-name: slidein;
   overflow: hidden;
+  animation-duration: 1s;
+}
+
+#flyoutMenu.default {
+  visibility: hidden;
+  animation-name: slideout;
+  animation-duration: 1s;
+  overflow: hidden;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-top: 0%;
+    height: 100%;
+  }
+
+  to {
+    margin-top: 100%;
+    height: 300%;
+  }
 }

@@ -137,7 +137,7 @@
 }
 
 .sliding-menu-container {
-  background-color: aquamarine;
+  overflow: hidden;
 
   position: absolute;
   top: 82%;
